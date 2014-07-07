@@ -126,7 +126,9 @@ The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** an
 * How to print all the terrain costs in the map and its respective Tibian locations:
     ```lua
 
-    	local map = GlobalMap()
+     local GlobalMap = require("GlobalMap")
+     
+     local map = GlobalMap()
     
     	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
     	
@@ -154,3 +156,10 @@ The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** an
     	end
     
     	map:Close()
+
+## Thanks
+* [TibiaApi](https://code.google.com/p/tibiaapi/source/browse/trunk/tibiaapi/Util/MapMerger.cs#16)
+* Jo3Bingham, for things that will come
+  * [Tibia: Data File Structure](http://tpforums.org/forum/threads/5030-Tibia-Data-File-Structure)
+  * [Tibia: Sprite File Structure](http://tpforums.org/forum/threads/5031-Tibia-Sprite-File-Structure)
+  
