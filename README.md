@@ -158,6 +158,8 @@ The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** an
     	map:Close()
 
 ## Thanks
+* [Programming in Lua](http://www.lua.org/pil/contents.html)
+* [Bitmap file format at Wikipedia](http://en.wikipedia.org/wiki/BMP_file_format)
 * [TibiaApi](https://code.google.com/p/tibiaapi/source/browse/trunk/tibiaapi/Util/MapMerger.cs#16)
 * Jo3Bingham, for things that will come
   * [Tibia: Data File Structure](http://tpforums.org/forum/threads/5030-Tibia-Data-File-Structure)
