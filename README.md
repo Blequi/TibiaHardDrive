@@ -144,7 +144,7 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
     		for x = left, right do
     			for y = top, bottom do
     				print(
-    					("(%05i, %05i, %02i) = 0x%02X"):format(x, y, z, map:GetPathCost(x, y))
+    					("(%05i, %05i, %02i) = 0x%02X"):format(x, y, z, map:GetTerrainCost(x, y))
     				)
     			end
     		end
