@@ -44,7 +44,7 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
 * How to print all the marks on the map:
     ```lua
 
-      local GlobalMap = require("GlobalMap")
+     local GlobalMap = require("GlobalMap")
     	local map = GlobalMap()
     	
     	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
@@ -68,11 +68,11 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
 * How to save a .bmp image from the map:
     ```lua
 
-      local GlobalMap = require("GlobalMap")
+     local GlobalMap = require("GlobalMap")
     	local map = GlobalMap()
     
     	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
-    	local bmpfilename = "USER_IMG.bmp" -- ex: os.getenv("userprofile) .. "\\venore.bmp"
+    	local bmpfilename = "USER_IMG.bmp" -- ex: os.getenv("userprofile") .. "\\venore.bmp"
     	
     	map:Open(filename)
     
@@ -88,7 +88,7 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
 * How to print all the colors in the map and its respective Tibian locations:
     ```lua
 
-      local GlobalMap = require("GlobalMap")
+     local GlobalMap = require("GlobalMap")
     	local map = GlobalMap()
     
     	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
@@ -97,7 +97,7 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
     	
     	if (map:IsOpen()) then
     	  
-    	  map:LoadColors()
+    	 map:LoadColors()
       	
     		local left, top, right, bottom =
     			map:Left(), map:Top(), map:Right(), map:Bottom()
