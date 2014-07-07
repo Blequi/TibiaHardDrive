@@ -41,6 +41,9 @@ The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** an
 ## Examples
 
 ### GlobalMap class (.map)
+
+Replace "filename", "bmpfilename" below for you personal files.
+
 * How to print all the marks on the map:
     ```lua
 
