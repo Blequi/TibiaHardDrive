@@ -6,7 +6,7 @@
 
 Anyone with a toolset capable of running Lua code (compiler, interpreter, etc) can benefit from using this library and due the nature of Lua, you can call this library even from your host program in C, C++, C#, Java, etc running a Lua state.
 
-The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and possibly others. For now, .map is the only one supported.
+The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** and possibly others. For now, .map is the only one supported.
 
 ## Features
 
