@@ -133,7 +133,8 @@ The files planned to be supported are: **.map**, **.dat*, **.spr**, **.cfg** and
     	map:Open(filename)
     	
     	if (map:IsOpen()) then
-    		map:LoadPathCosts()
+    	
+    		map:LoadTerrainCosts()
     
     		local left, top, right, bottom =
     			map:Left(), map:Top(), map:Right(), map:Bottom()
