@@ -67,6 +67,7 @@ Replace "filename", "bmpfilename" below for you personal files.
     	end
     
     	map:Close()
+```
 
 * How to save a .bmp image from the map:
     ```lua
@@ -87,6 +88,7 @@ Replace "filename", "bmpfilename" below for you personal files.
     	end
     
     	map:Close()
+```
 
 * How to print all the colors in the map and its respective Tibian locations:
     ```lua
@@ -125,6 +127,7 @@ Replace "filename", "bmpfilename" below for you personal files.
     	end
     	
     	map:Close()
+```
 
 * How to print all the terrain costs in the map and its respective Tibian locations:
     ```lua
@@ -159,6 +162,7 @@ Replace "filename", "bmpfilename" below for you personal files.
     	end
     
     	map:Close()
+````
 
 ## Thanks
 * [Programming in Lua](http://www.lua.org/pil/contents.html)
