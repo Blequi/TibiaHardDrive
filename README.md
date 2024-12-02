@@ -45,124 +45,122 @@ The files planned to be supported are: **.map**, **.dat**, **.spr**, **.cfg** an
 Replace "filename", "bmpfilename" below for you personal files.
 
 * How to print all the marks on the map:
-    ```lua
 
-     local GlobalMap = require("GlobalMap")
-    	local map = GlobalMap()
-    	
-    	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
-    	
-    	map:Open(filename)
-    
-    	if (map:IsOpen()) then
-    		for _, mark in ipairs(map:Marks()) do
-    
-    			print(
-    				("{ x = %s, y = %s, type = %s, description = %q }"):format(mark.X, mark.Y, mark.Type, mark.Description)
-    			)
-    
-    		end
-    	else
-    		print("cannot open map")
-    	end
-    
-    	map:Close()
-```
+    ```lua
+    local GlobalMap = require("GlobalMap")                                                                                                                                                                                           
+    local map = GlobalMap()                                                                                                                                                                                                          
+                                                                                                                                                                                                                                     
+    local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"                                                                                                                                      
+                                                                                                                                                                                                                                     
+    map:Open(filename)                                                                                                                                                                                                               
+                                                                                                                                                                                                                                     
+    if (map:IsOpen()) then                                                                                                                                                                                                           
+        for _, mark in ipairs(map:Marks()) do                                                                                                                                                                                        
+                                                                                                                                                                                                                                     
+        print(                                                                                                                                                                                                                       
+          ("{ x = %s, y = %s, type = %s, description = %q }"):format(mark.X, mark.Y, mark.Type, mark.Description)                                                                                                                    
+        )                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                     
+        end                                                                                                                                                                                                                          
+    else                                                                                                                                                                                                                             
+        print("cannot open map")                                                                                                                                                                                                     
+    end                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                     
+    map:Close()
+    ```
 
 * How to save a .bmp image from the map:
+    
     ```lua
-
-     local GlobalMap = require("GlobalMap")
-    	local map = GlobalMap()
-    
-    	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
-    	local bmpfilename = "USER_IMG.bmp" -- ex: os.getenv("userprofile") .. "\\venore.bmp"
-    	
-    	map:Open(filename)
-    
-    	if (map:IsOpen()) then
-    		map:LoadColors()
-    		map:SaveImage(bmpfilename)
-    	else
-    		print("cannot open map")
-    	end
-    
-    	map:Close()
-```
+    local GlobalMap = require("GlobalMap")                                                                                                                                                                                           
+    local map = GlobalMap()                                                                                                                                                                                                          
+                                                                                                                                                                                                                                     
+    local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"                                                                                                                                      
+    local bmpfilename = "USER_IMG.bmp" -- ex: os.getenv("userprofile") .. "\\venore.bmp"                                                                                                                                             
+                                                                                                                                                                                                                                     
+    map:Open(filename)                                                                                                                                                                                                               
+                                                                                                                                                                                                                                     
+    if (map:IsOpen()) then                                                                                                                                                                                                           
+        map:LoadColors()                                                                                                                                                                                                             
+        map:SaveImage(bmpfilename)                                                                                                                                                                                                   
+    else                                                                                                                                                                                                                             
+        print("cannot open map")                                                                                                                                                                                                     
+    end                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                     
+    map:Close()
+    ```
 
 * How to print all the colors in the map and its respective Tibian locations:
+    
     ```lua
-
-     local GlobalMap = require("GlobalMap")
-    	local map = GlobalMap()
-    
-    	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
-    	
-    	map:Open(filename)
-    	
-    	if (map:IsOpen()) then
-    	  
-    	 map:LoadColors()
-      	
-    		local left, top, right, bottom =
-    			map:Left(), map:Top(), map:Right(), map:Bottom()
-    
-    		local z = map:Z()
-    		
-    		local color = nil
-    		
-    		for x = left, right do
-    			for y = top, bottom do
-    			  
-    			  color = map:GetColor(x, y)
-    			
-    				print(
-    					('(%05i, %05i, %02i) = { r = 0x%02X, g = 0x%02X, b = 0x%02X }')
-    					:format(x, y, z, color.R, color.G, color.B)
-    				)
-    			end
-    		end
-    	else
-    	  print("cannot open map")
-    	end
-    	
-    	map:Close()
-```
+    local GlobalMap = require("GlobalMap")                                                                                                                                                                                           
+    local map = GlobalMap()                                                                                                                                                                                                          
+                                                                                                                                                                                                                                     
+    local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"                                                                                                                                      
+                                                                                                                                                                                                                                     
+    map:Open(filename)                                                                                                                                                                                                               
+                                                                                                                                                                                                                                     
+    if (map:IsOpen()) then                                                                                                                                                                                                           
+                                                                                                                                                                                                                                     
+        map:LoadColors()                                                                                                                                                                                                             
+                                                                                                                                                                                                                                     
+        local left, top, right, bottom = map:Left(), map:Top(), map:Right(), map:Bottom()                                                                                                                                            
+                                                                                                                                                                                                                                     
+        local z = map:Z()                                                                                                                                                                                                            
+                                                                                                                                                                                                                                     
+        local color = nil                                                                                                                                                                                                            
+                                                                                                                                                                                                                                     
+        for x = left, right do                                                                                                                                                                                                       
+            for y = top, bottom do                                                                                                                                                                                                   
+                                                                                                                                                                                                                                     
+                color = map:GetColor(x, y)                                                                                                                                                                                           
+                                                                                                                                                                                                                                     
+                print(                                                                                                                                                                                                               
+                    ('(%05i, %05i, %02i) = { r = 0x%02X, g = 0x%02X, b = 0x%02X }')                                                                                                                                                  
+                    :format(x, y, z, color.R, color.G, color.B)                                                                                                                                                                      
+                )                                                                                                                                                                                                                    
+            end                                                                                                                                                                                                                      
+        end                                                                                                                                                                                                                          
+    else                                                                                                                                                                                                                             
+        print("cannot open map")                                                                                                                                                                                                     
+    end                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                     
+    map:Close()
+    ```
 
 * How to print all the terrain costs in the map and its respective Tibian locations:
-    ```lua
 
-     local GlobalMap = require("GlobalMap")
-     
-     local map = GlobalMap()
-    
-    	local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"
-    	
-    	map:Open(filename)
-    	
-    	if (map:IsOpen()) then
-    	
-    		map:LoadTerrainCosts()
-    
-    		local left, top, right, bottom =
-    			map:Left(), map:Top(), map:Right(), map:Bottom()
-    
-    		local z = map:Z()
-    
-    		for x = left, right do
-    			for y = top, bottom do
-    				print(
-    					("(%05i, %05i, %02i) = 0x%02X"):format(x, y, z, map:GetTerrainCost(x, y))
-    				)
-    			end
-    		end
-    		
-    	else
-    		print("cannot open map")
-    	end
-    
-    	map:Close()
-````
+    ```lua
+    local GlobalMap = require("GlobalMap")                                                                                                                                                                                           
+                                                                                                                                                                                                                                     
+    local map = GlobalMap()                                                                                                                                                                                                          
+                                                                                                                                                                                                                                     
+    local filename = "FILENAME" -- ex: os.getenv("appdata") .. "\\Tibia\\Automap\\12812507.map"                                                                                                                                      
+                                                                                                                                                                                                                                     
+    map:Open(filename)                                                                                                                                                                                                               
+                                                                                                                                                                                                                                     
+    if (map:IsOpen()) then                                                                                                                                                                                                           
+                                                                                                                                                                                                                                     
+        map:LoadTerrainCosts()                                                                                                                                                                                                       
+                                                                                                                                                                                                                                     
+        local left, top, right, bottom = map:Left(), map:Top(), map:Right(), map:Bottom()                                                                                                                                            
+                                                                                                                                                                                                                                     
+        local z = map:Z()                                                                                                                                                                                                            
+                                                                                                                                                                                                                                     
+        for x = left, right do                                                                                                                                                                                                       
+            for y = top, bottom do                                                                                                                                                                                                   
+                print(                                                                                                                                                                                                               
+                    ("(%05i, %05i, %02i) = 0x%02X"):format(x, y, z, map:GetTerrainCost(x, y))                                                                                                                                        
+                )                                                                                                                                                                                                                    
+            end                                                                                                                                                                                                                      
+        end                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                     
+    else                                                                                                                                                                                                                             
+        print("cannot open map")                                                                                                                                                                                                     
+    end                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                     
+    map:Close()
+    ```
 
 ## Thanks
 * [Programming in Lua](http://www.lua.org/pil/contents.html)
